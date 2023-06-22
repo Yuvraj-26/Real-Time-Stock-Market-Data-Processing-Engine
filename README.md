@@ -100,9 +100,44 @@ Consumer
 <img src="definition2.jpg">
 
 
+## Milestones completed 
+Systematically executed the project by:
+- Installed Kafka on EC2 Machine
+- Executed Consumer and Producer in real-time
+- Simulate the data into real-time format 
+- Real-time stock market API can be used in while loop.
+- Create JSON for dictionary format of data as required:
+ 
+
+<img src="dataset.jpg">
+
+<img src="dataset2.jpg">
 
 
+## S3 Bucket
+S3 Buckets are public cloud storage containers for objects stored in simple storage service. (Amazon S3) is an object storage service offering industry-leading scalability, data availability, security, and performance.
 
+- Create S3 Bucket for Stock Market Project
+- Install AWS CLI
+- aws configure and enter AWS Access Key ID and Secret Access Key, Default region name
+- Upload data to S3
+
+## Crawler AWS GLUE
+- Use a crawler to populate the AWS Glue Data Catalog with tables. This is the primary method used by most AWS Glue users. A crawler can crawl multiple data stores in a single run
+- Crawl the entire schema from S3 to directly query on top using Athena
+- Create Stock Market Crawler for S3 Data
+- Select S3 bucket for stock market using S3 PATH
+- IAM Role gives access to glue to read and write data on S3
+- Create Crawler using stock market database
+
+## Amazon Athena used to query data into real time
+
+
+<img src="athena.jpg">
+
+<img src="query.jpg">
+
+ 
 
 
 
