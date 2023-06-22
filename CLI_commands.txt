@@ -1,0 +1,60 @@
+1. DOWNLOAD KAFKA AND EXTRACT FILES
+
+wget https://downloads.apache.org/kafka/3.3.1/kafka_2.12-3.3.1.tgz
+tar -xvf kafka_2.12-3.3.1.tgz
+
+
+2. APACHE KAFKA RUNS ON TOP OF JVM JAVA VIRTUAL MACHINE, INSTALL JAVA 1.8
+
+Download Java 1.8
+java -version
+sudo yum install java-1.8.0-openjdk
+java -version
+
+ 
+cd kafka_2.12-3.3.1
+
+3. START ZOO-KEEPER
+
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+
+
+4. OPEN NEW COMMAND LINE AND SSH TO EC2 MACHINE
+
+5. START KAFKA SERVER
+
+ERROR: Unable to use this server as the DNS address that we use to access the Kafka server, so change the Private IP of Instance to Public IP
+
+Duplicate the session & enter in a new console --
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M"
+cd kafka_2.12-3.3.1
+bin/kafka-server-start.sh config/server.properties
+
+It is pointing to private server , change server.properties so that it can run in public IP 
+
+To do this, you can follow any of the 2 approaches shared below --
+Do a "sudo nano config/server.properties" - change ADVERTISED_LISTENERS to public IP of the EC2 instance
+
+Provide security access from local machine 
+Edit Imbound rules to allow the request
+Allow all traffic and source is MY IP 
+This gives access to EC2 Machine to local computer
+DevOps engineer usually handles the security side as allowing all traffic is not standard
+
+
+6. CREATE THE TOPIC
+
+Duplicate the session & enter in a new console --
+cd kafka_2.12-3.3.1
+bin/kafka-topics.sh --create --topic demo_testing2 --bootstrap-server {Put the Public IP of your EC2 Instance:9092} --replication-factor 1 --partitions 1
+
+Start Producer:
+bin/kafka-console-producer.sh --topic demo_testing2 --bootstrap-server {Put the Public IP of your EC2 Instance:9092} 
+
+Start Consumer:
+Duplicate the session & enter in a new console --
+cd kafka_2.12-3.3.1
+bin/kafka-console-consumer.sh --topic demo_testing2 --bootstrap-server {Put the Public IP of your EC2 Instance:9092}
+
+SUCCESS: PRODUCER DATA TO CONSUMER IN REAL TIME FROM TERMINAL
