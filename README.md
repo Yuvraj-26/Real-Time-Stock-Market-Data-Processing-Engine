@@ -65,7 +65,7 @@ A producer partitioner maps each message to a topic partition, and the producer 
 
 <img src="Docs/Kafkacluster.png">
 
-Kafka uses partitions to distribute storage and processing of events in a topic. Each topic consists of multiple partitions spread across nodes in the Kafka cluster. Partitions serve as the primary unit of storage and parallelism. Events can be produced and consumed in parallel by writing to and reading from different partitions.
+Kafka uses partitions to distribute storage and processing of events in a topic. Each topic consists of multiple partitions spread across nodes in the Kafka cluster. Partitions serve as the primary unit of storage and parallelism. Events can be produced and consumed in parallel by writing to and reading from different partitions
 
 Within a partition, events are assigned unique identifiers called offsets. These offsets continuously increase as new events are added and are never reused. Offsets are utilized by consumers to track the processing progress and determine which events have been processed
 
@@ -226,7 +226,7 @@ bin/kafka-console-consumer.sh --topic demo_testing2 --bootstrap-server {Put the 
 
 SUCCESS: PRODUCER DATA TO CONSUMER IN REAL TIME FROM TERMINAL
 
-## Step 4: Open Jupyter Notebook and Create Basic Kafka Producer and Kafka Consumer in Python
+## Step 4: Open Jupyter Notebook and Create a Basic Kafka Producer and Kafka Consumer in Python
 
 
 Basic Producer
@@ -240,7 +240,7 @@ Basic Consumer
 <img src="Docs/Consumercode.png">
 
 
-## Step 5: Integrate Stock Market Data in Producer
+## Step 5: Integrate Stock Market Data in the Producer Python File
 
 Usually Real Time Stock Market API can be used to gain real time stock market data
 In this case we will loop the stock market data set to simulate real time data instead
@@ -293,7 +293,7 @@ S3 bucket name used to uplaod data to S3
 A Stock Market Event has been stored in each single file on S3
 
 
-## Step 7: Build a Crawler using AWS GLUE and Create AWS GLUE Data Catalog
+## Step 7: Build a Crawler using AWS GLUE and Create the AWS GLUE Data Catalog
 
 AWS Glue is a serverless data integration service that makes it easier to discover, prepare, move, and integrate data from multiple sources for analytics, machine learning (ML), and application development
 
