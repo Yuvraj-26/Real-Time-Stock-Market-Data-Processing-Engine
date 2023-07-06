@@ -57,7 +57,7 @@ An Apache Kafka® Consumer is a client application that subscribes to (reads and
 
 The Kafka consumer works by issuing “fetch” requests to the brokers leading the partitions it wants to consume. The consumer offset is specified in the log with each request. The consumer receives back a chunk of log beginning from the offset position. The consumer has significant control over this position and can rewind it to re-consume data if desired
 
-An Apache Kafka® Producer is a client application that publishes (writes) events to a Kafka cluster
+An Apache Kafka Producer is a client application that publishes (writes) events to a Kafka cluster
 
 A producer partitioner maps each message to a topic partition, and the producer sends a produce request to the leader of that partition. The partitioners shipped with Kafka guarantee that all messages with the same non-empty key will be sent to the same partition
 
@@ -98,7 +98,7 @@ Apache Kafka is built upon a network of independent machines called brokers. The
 
 <img src="Docs/Broker.png">
 
-Client requests fall into two categories: produce requests and fetch requests. A produce request is requesting that a batch of data be written to a specified topic. A fetch request is requesting data from Kafka topics. 
+Client requests fall into two categories: produce requests and fetch requests. A produce request is requesting that a batch of data be written to a specified topic. A fetch request is requesting data from Kafka topics
 
 ## Data Partition
 
@@ -245,7 +245,9 @@ Basic Consumer
 Usually Real Time Stock Market API can be used to gain real time stock market data
 In this case we will loop the stock market data set to simulate real time data instead
 
+
 <img src="Docs/Format.png">
+
 
 Format dataset into dictionary format using orient in pandas
 
@@ -253,7 +255,9 @@ DataFrame.to_dict(orient='dict', into=<class 'dict'>, index=True)[source]
 
 Convert the DataFrame to a dictionary
 
+
 <img src="Docs/While.png">
+
 
 WHile loop sends Structured JSON data is sent to Kafka Server to sumulate real time data soure
 
@@ -277,7 +281,9 @@ Paste AWS Access key ID, AWS Secret Access key, and Default region name
 
 - Edit Consumer to Store data to S3
 
+
 <img src="Docs/consumer2.png">
+
 
 S3 bucket name used to uplaod data to S3
 
@@ -317,7 +323,9 @@ Amazon Athena is an interactive query service that makes it easy to analyze data
 
 - Run KafkaConsumer.py to consume data and upload to S3
 
+
 <img src="Docs/Sleep.png">
+
 
 The time.sleep(1) limit in the KafkaProducer.py
 
