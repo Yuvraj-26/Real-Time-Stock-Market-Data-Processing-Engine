@@ -63,7 +63,7 @@ A producer partitioner maps each message to a topic partition, and the producer 
 
 ## Kafka Cluster
 
-<img src="Docs/Kafkacluster.jpg">
+<img src="Docs/Kafkacluster.png">
 
 Kafka uses partitions to distribute storage and processing of events in a topic. Each topic consists of multiple partitions spread across nodes in the Kafka cluster. Partitions serve as the primary unit of storage and parallelism. Events can be produced and consumed in parallel by writing to and reading from different partitions.
 
