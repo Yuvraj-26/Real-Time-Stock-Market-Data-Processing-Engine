@@ -53,7 +53,7 @@ Kafka is a distributed system consisting of servers and clients that communicate
 
 The producer API for writing events and the consumer API for reading them. On top of these are APIs built for integration and processing
 
-An Apache Kafka® Consumer is a client application that subscribes to (reads and processes) events
+An Apache Kafka Consumer is a client application that subscribes to (reads and processes) events
 
 The Kafka consumer works by issuing “fetch” requests to the brokers leading the partitions it wants to consume. The consumer offset is specified in the log with each request. The consumer receives back a chunk of log beginning from the offset position. The consumer has significant control over this position and can rewind it to re-consume data if desired
 
