@@ -290,7 +290,7 @@ S3 bucket name used to uplaod data to S3
 
 <img src="Docs/IAM.png">
 
-A Stock Market Event has been stored in single file on S3
+A Stock Market Event has been stored in each single file on S3
 
 
 ## Step 7: Build a Crawler using AWS GLUE and Create AWS GLUE Data Catalog
