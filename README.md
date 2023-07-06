@@ -46,7 +46,7 @@ Apache Kafka consists of a storage layer and a compute layer that combines effic
 Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. Stream processing is the act of performing continual calculations on potentially endless and constantly evolving sources of data (Real-time streaming and notification)
 
 
-##Kafka Architecture
+## Kafka Architecture
 
 
 <img src="Docs/Layers.png">
@@ -61,7 +61,7 @@ An Apache Kafka® Producer is a client application that publishes (writes) event
 
 A producer partitioner maps each message to a topic partition, and the producer sends a produce request to the leader of that partition. The partitioners shipped with Kafka guarantee that all messages with the same non-empty key will be sent to the same partition
 
-##Kafka Cluster
+## Kafka Cluster
 
 <img src="Docs/Kafkacluster.jpg">
 
@@ -70,7 +70,7 @@ Kafka uses partitions to distribute storage and processing of events in a topic.
 Within a partition, events are assigned unique identifiers called offsets. These offsets continuously increase as new events are added and are never reused. Offsets are utilized by consumers to track the processing progress and determine which events have been processed
 
 
-##Kafka Topics
+## Kafka Topics
 
 <img src="Docs/Topics.png">
 
@@ -82,7 +82,7 @@ Kafka partitions topics across multiple brokers to achieve scalability. This dis
 
 Topics are append-only, immutable logs of events
 
-##Kafka Event
+## Kafka Event
 
 <img src="Docs/Event.png">
 
@@ -91,7 +91,7 @@ In stream processing, an event is a record capturing information about a specifi
 An event record includes a timestamp, a key, a value, and optional headers. The event payload is typically stored in the value field. While the key is optional, it plays a vital role in event ordering, collocating related events across topics, and key-based storage or compaction
 
 
-##Kafka Broker
+## Kafka Broker
 
 Apache Kafka is built upon a network of independent machines called brokers. These brokers, which can be physical servers or containers running on virtualized servers, are responsible for hosting partitions and managing read and write requests for events. Brokers also handle replication of partitions between each other
 
@@ -108,7 +108,7 @@ When partitioning a topic, messages without a key are distributed evenly among p
 
 Using a key, such as a customer ID, guarantees that events associated with the same customer are always ordered. While active keys may result in larger partitions, the trade-off is worth it to maintain key ordering, and any associated risks can be managed effectively
 
-##Apache ZooKeeper
+## Apache ZooKeeper
 
 ZooKeeper is utilized by several open-source projects to provide a highly reliable control plane for distributed coordination of clustered applications through a hierarchical key-value store. The suite of services provided by ZooKeeper include distributed configuration services, synchronization services, leadership election services, and a naming registry
 
@@ -125,7 +125,7 @@ Role is Cluster Management, Failure detection and recover, and Store ACLs (Acces
 - Provides distributed synchronization
 
 
-##Summary
+## Summary
 
 Producer
 - Producers write Data as Messages
@@ -228,7 +228,9 @@ SUCCESS: PRODUCER DATA TO CONSUMER IN REAL TIME FROM TERMINAL
 
 ## Step 4: Open Jupyter Notebook and Create Basic Kafka Producer and Kafka Consumer in Python
 
+
 Basic Producer
+
 
 <img src="Docs/Producercode.png">
 
@@ -236,6 +238,7 @@ Basic Producer
 Basic Consumer 
 
 <img src="Docs/Consumercode.png">
+
 
 ## Step 5: Integrate Stock Market Data in Producer
 
