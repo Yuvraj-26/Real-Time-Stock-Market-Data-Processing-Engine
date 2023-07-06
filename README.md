@@ -237,6 +237,7 @@ Basic Producer
 
 Basic Consumer 
 
+
 <img src="Docs/Consumercode.png">
 
 
@@ -290,6 +291,7 @@ S3 bucket name used to uplaod data to S3
 
 <img src="Docs/IAM.png">
 
+
 A Stock Market Event has been stored in each single file on S3
 
 
@@ -341,7 +343,9 @@ From the Kafka Consumer, we are receiving the data and uploading to the S3 Bucke
 <img src="Docs/Athena.png">
 
 
-SELECT COUNT(*) FROM "stock_market_kafka", kafka-stock-market-engine-ym" limit 10;
+SELECT COUNT(*) FROM "stock_market_kafka", kafka-stock-market-engine-ym" limit 10;    
+
+where stock_market_kafka is the database and kafka-stock-market-engine-ym is the S3 Instance
 
 SELECT MAX(DATE) FROM "stock_market_kafka", kafka-stock-market-engine-ym" ;
 
