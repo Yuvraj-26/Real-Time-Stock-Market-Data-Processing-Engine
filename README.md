@@ -1,4 +1,6 @@
-# Real Time Stock Market Data Processing Engine using Kafka Data Engineering Project
+# Real Time Stock Market Data Processing Engine using kafka
+
+Created by Yuvraj M
 
 ## Introduction 
 Aim: Develop an End-To-End Data Engineering Project on Real-Time Stock Market Data using Kafka.
@@ -363,5 +365,7 @@ Systematically executed the project:
 - Build a Crawler using AWS GLUE and Create AWS GLUE Data Catalog 
 - Query data in real time basis using Amazon Athena
  
-
+## Credits and Acknowledgements
+Darshil Parmar
+https://github.com/darshilparmar
 
