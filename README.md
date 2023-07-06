@@ -5,7 +5,8 @@ Aim: Develop an End-To-End Data Engineering Project on Real-Time Stock Market Da
 Implement and execute solution using Python, Amazon Web Services (AWS), Apache Kafka, Glue, Athena, and SQL.
 
 ## Architecture 
-<img src="Architecture.jpg">
+
+<img src="Docs/Architecture.jpg">
 
 ## Technology Used
 - Programming Language - Python
@@ -40,7 +41,7 @@ Apache Kafka consists of a storage layer and a compute layer that combines effic
 - Event-Driven Microservices - Apache Kafka is the most popular tool for microservices because it solves many of the issues of microservices orchestration while enabling attributes that microservices aim to achieve, such as scalability, efficiency, and speed. It also facilitates inter-service communication while preserving ultra-low latency and fault tolerance
 
 
-<img src="Kafka.png">
+<img src="Docs/Kafka.png">
 
 Kafka is a distributed system consisting of servers and clients that communicate via a high-performance TCP network protocol. Stream processing is the act of performing continual calculations on potentially endless and constantly evolving sources of data (Real-time streaming and notification)
 
@@ -48,7 +49,7 @@ Kafka is a distributed system consisting of servers and clients that communicate
 ##Kafka Architecture
 
 
-<img src="Layers.png">
+<img src="Docs/Layers.png">
 
 The producer API for writing events and the consumer API for reading them. On top of these are APIs built for integration and processing
 
@@ -62,7 +63,7 @@ A producer partitioner maps each message to a topic partition, and the producer 
 
 ##Kafka Cluster
 
-<img src="Kafkacluster.jpg">
+<img src="Docs/Kafkacluster.jpg">
 
 Kafka uses partitions to distribute storage and processing of events in a topic. Each topic consists of multiple partitions spread across nodes in the Kafka cluster. Partitions serve as the primary unit of storage and parallelism. Events can be produced and consumed in parallel by writing to and reading from different partitions.
 
@@ -71,7 +72,7 @@ Within a partition, events are assigned unique identifiers called offsets. These
 
 ##Kafka Topics
 
-<img src="Topics.png">
+<img src="Docs/Topics.png">
 
 Topics are Virtual Groups or Logs that hold messages and events in a logical order, allowing users to send and receive data between Kafka Servers with ease
 
@@ -83,7 +84,7 @@ Topics are append-only, immutable logs of events
 
 ##Kafka Event
 
-<img src="Event.png">
+<img src="Docs/Event.png">
 
 In stream processing, an event is a record capturing information about a specific occurrence, such as customer orders, payments, website clicks, or sensor readings. Events should not be excessively large, like a 10GB video. Instead, a reference to the video's location in an object store is preferable
 
@@ -95,7 +96,7 @@ An event record includes a timestamp, a key, a value, and optional headers. The 
 Apache Kafka is built upon a network of independent machines called brokers. These brokers, which can be physical servers or containers running on virtualized servers, are responsible for hosting partitions and managing read and write requests for events. Brokers also handle replication of partitions between each other
 
 
-<img src="Broker.png">
+<img src="Docs/Broker.png">
 
 Client requests fall into two categories: produce requests and fetch requests. A produce request is requesting that a batch of data be written to a specified topic. A fetch request is requesting data from Kafka topics. 
 
@@ -229,19 +230,19 @@ SUCCESS: PRODUCER DATA TO CONSUMER IN REAL TIME FROM TERMINAL
 
 Basic Producer
 
-<img src="Producercode.png">
+<img src="Docs/Producercode.png">
 
 
 Basic Consumer 
 
-<img src="Consumercode.png">
+<img src="Docs/Consumercode.png">
 
 ## Step 5: Integrate Stock Market Data in Producer
 
 Usually Real Time Stock Market API can be used to gain real time stock market data
 In this case we will loop the stock market data set to simulate real time data instead
 
-<img src="Format.png">
+<img src="Docs/Format.png">
 
 Format dataset into dictionary format using orient in pandas
 
@@ -249,7 +250,7 @@ DataFrame.to_dict(orient='dict', into=<class 'dict'>, index=True)[source]
 
 Convert the DataFrame to a dictionary
 
-<img src="While.png">
+<img src="Docs/While.png">
 
 WHile loop sends Structured JSON data is sent to Kafka Server to sumulate real time data soure
 
@@ -273,12 +274,12 @@ Paste AWS Access key ID, AWS Secret Access key, and Default region name
 
 - Edit Consumer to Store data to S3
 
-<img src="consumer2.png">
+<img src="Docs/consumer2.png">
 
 S3 bucket name used to uplaod data to S3
 
 
-<img src="IAM.png">
+<img src="Docs/IAM.png">
 
 A Stock Market Event has been stored in single file on S3
 
@@ -313,7 +314,7 @@ Amazon Athena is an interactive query service that makes it easy to analyze data
 
 - Run KafkaConsumer.py to consume data and upload to S3
 
-<img src="Sleep.png">
+<img src="Docs/Sleep.png">
 
 The time.sleep(1) limit in the KafkaProducer.py
 
@@ -326,7 +327,7 @@ From the Kafka Consumer, we are receiving the data and uploading to the S3 Bucke
 - Query the Stock Market data in real time
 
 
-<img src="Athena.png">
+<img src="Docs/Athena.png">
 
 
 SELECT COUNT(*) FROM "stock_market_kafka", kafka-stock-market-engine-ym" limit 10;
