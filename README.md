@@ -142,7 +142,6 @@ Consumer
 	Is stored in special topic
 - CLI tools exist to read from cluster
 
-
 ## Step 1: Launch an Instance on EC2 Machine and Connect to Instance
 
 - AWS account > EC2 > Instances > Create key pair for EC2 connection > Launch instance
