@@ -363,8 +363,3 @@ Systematically executed the project:
 - Create JSON for dictionary format of data as required
 - Build a Crawler using AWS GLUE and Create AWS GLUE Data Catalog 
 - Query data in real time basis using Amazon Athena
- 
-## Credits and Acknowledgements
-Darshil Parmar
-https://github.com/darshilparmar
-
