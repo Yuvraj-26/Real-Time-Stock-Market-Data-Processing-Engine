@@ -25,7 +25,8 @@ Implement and execute solution using Python, Amazon Web Services (AWS), Apache K
 ## Dataset 
 Operational Data Engineering - Building an end-to-end data pipeline using the following dataset
 
-https://github.com/darshilparmar/stock-market-kafka-data-engineering-project/blob/main/indexProcessed.csv
+https://github.com/Yuvraj-26/Real-Time-Stock-Market-Data-Processing-Engine/blob/main/indexProcessed.csv
+
 
 ## Kafka
 
